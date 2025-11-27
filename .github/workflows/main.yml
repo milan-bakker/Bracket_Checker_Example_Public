@@ -5,23 +5,10 @@ jobs:
   demo_job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World"
-      - name: Checkout
-        uses: actions/setup-dotnet@v5.0.1
-  new-job:
-    # You may pin to the exact commit or the version.
-    # uses: eero-dev/dotnet-format@08edde31f7c1eb79a308a4b895d1ba441ad2523a
-    runs-on: ubuntu-latest
-    steps:
-      - name: dotnet-format-format
-      - uses: eero-dev/dotnet-format@1.0.1
-        with:
-          # The GITHUB_TOKEN secret
-          repo-token: VERY_SECRET
-         
-      
-          # The solution or project file to operate on.
-          workspace: Bracket_Checker_Example_Public.sln
-          # The files to include, delimited by space.
+    - uses: actions/checkout@v5
+    - uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 9.0.0
+    - run: dotnet build workshop
          
             
