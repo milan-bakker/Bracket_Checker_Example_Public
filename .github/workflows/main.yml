@@ -1,11 +1,10 @@
 name: Workshop
 run-name: testing workflows 
 on: [push]
-
 jobs:
   demo_job:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World"
       - name: Checkout
-        uses: actions/checkout@6.0.0
+        uses: actions/setup-dotnet@v5.0.1
